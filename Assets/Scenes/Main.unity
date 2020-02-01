@@ -1128,14 +1128,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af88a2b17f064244a82ec32c26f67d38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pointA: {x: 0, y: 0}
-  pointB: {x: 0, y: 0}
-  pointX: {x: 0, y: 0}
-  pointY: {x: 0, y: 0}
-  pointC: {x: 0, y: 0}
-  pointD: {x: 0, y: 0}
-  pointE: {x: 0, y: 0}
-  pointF: {x: 0, y: 0}
+  pointA: {x: -4, y: 4}
+  pointB: {x: 4, y: 4}
+  pointX: {x: -4, y: -4}
+  pointY: {x: 4, y: -4}
+  pointC: {x: -4, y: 4}
+  pointD: {x: -4, y: -4}
+  pointE: {x: 4, y: 4}
+  pointF: {x: 4, y: -4}
 --- !u!114 &1846357644
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1148,9 +1148,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0e40b5d054b0674a844bd74524096ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Dot: {fileID: 21300000, guid: b5f49f968c74105488df1f59482d1a36, type: 3}
-  Size: 0
-  Delta: 0
+  Dot: {fileID: 21300000, guid: 86e6f4eaee029164e8ad8ccb8b3cfc7b, type: 3}
+  Size: 0.08
+  Delta: 0.35
 --- !u!1 &2067112629
 GameObject:
   m_ObjectHideFlags: 0
