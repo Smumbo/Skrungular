@@ -49,7 +49,7 @@ public class Ball : MonoBehaviour
         rb.AddForce(rb.velocity.normalized * incrSpeed, ForceMode2D.Impulse);
 
         //update score text
-        text.setScoreText();
+        text.PlusOne();
     }
 }
 
