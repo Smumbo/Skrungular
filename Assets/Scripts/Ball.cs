@@ -10,6 +10,11 @@ public class Ball : MonoBehaviour
 
     public int count; //for debugging
 
+    public GameObject northWall;
+    public GameObject southWall;
+    public GameObject eastWall;
+    public GameObject westWall;
+
     private Rigidbody2D rb;
 
     // Start is called before the first frame update
@@ -18,7 +23,7 @@ public class Ball : MonoBehaviour
         //get rigidbody
         rb = this.GetComponent<Rigidbody2D>();
         //initial velocity
-        rb.velocity = Vector2.right * speed;
+        rb.velocity = speed * new Vector2(Random.value, Random.value);
     }
 
     // Update is called once per frame
@@ -27,27 +32,23 @@ public class Ball : MonoBehaviour
 
     }
 
-    private float hitFactorX(Vector2 ballPos, Vector2 wallPos, float wallLength){
-        return (ballPos.x - wallPos.x) / wallLength;
-    }
-
-    private float hitFactorY(Vector2 ballPos, Vector2 wallPos, float wallLength){
-        return (ballPos.y - wallPos.y) / wallLength;
-    }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        //Hit wall
-        float x = hitFactorX(transform.position, 
-                             collision.transform.position, 
-                             collision.collider.bounds.size.x);
-        float y = hitFactorY(transform.position,
-                             collision.transform.position,
-                             collision.collider.bounds.size.y);
-        Vector2 dir = new Vector2(x, y).normalized;
+
+    /*    Vector2 dir = this.transform.position;
+        if (collision.gameObject == eastWall || collision.gameObject == westWall)
+        {
+            dir.x *= -1;
+        }
+        else if (collision.gameObject == northWall || collision.gameObject == southWall){
+            dir.y *= -1;
+        }*/
+
         //increase speed and update velocity accordingly
         speed += incrSpeed;
         count++;
-        rb.velocity = dir * speed;
+        rb.velocity += new Vector2(incrSpeed, incrSpeed);
+        //rb.AddForce(dir * speed);
     }
 }
