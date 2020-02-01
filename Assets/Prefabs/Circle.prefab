@@ -117,8 +117,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 15
-  incrSpeed: 0.01
+  incrSpeed: 0.1
   count: 0
+  text: {fileID: 0}
   northWall: {fileID: 0}
   southWall: {fileID: 0}
   eastWall: {fileID: 0}

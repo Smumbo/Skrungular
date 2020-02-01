@@ -13,11 +13,6 @@ public class Ball : MonoBehaviour
 
     public Text text;
 
-    public GameObject northWall;
-    public GameObject southWall;
-    public GameObject eastWall;
-    public GameObject westWall;
-
     private Rigidbody2D rb;
 
     // Start is called before the first frame update
@@ -38,16 +33,7 @@ public class Ball : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-
-    /*    Vector2 dir = this.transform.position;
-        if (collision.gameObject == eastWall || collision.gameObject == westWall)
-        {
-            dir.x *= -1;
-        }
-        else if (collision.gameObject == northWall || collision.gameObject == southWall){
-            dir.y *= -1;
-        }*/
-
+    
         //increase speed and update velocity accordingly
         speed += incrSpeed;
         count++;
