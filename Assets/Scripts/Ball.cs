@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class Ball : MonoBehaviour
 {
+    public ScreenShake camera;
+
     public float speed;
 
     public float incrSpeed; //amount speed increases with every hit
@@ -33,7 +35,7 @@ public class Ball : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-    
+
         //increase speed and update velocity accordingly
         speed += incrSpeed;
         count++;
