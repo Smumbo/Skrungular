@@ -41,13 +41,13 @@ public class Ball : MonoBehaviour
         hitBlip.Play();
 
         // shake screen
-        Camera.main.GetComponent<CameraControl>().Shake(0.5f, 3, 5);
+        Camera.main.GetComponent<CameraControl>().Shake(0.4f, 3, 5);
 
         //increase speed and update velocity accordingly
 
         speed += incrSpeed;
         rb.AddForce(rb.velocity.normalized * incrSpeed, ForceMode2D.Impulse);
-      
+
         //update score text
         text.setScoreText();
     }
