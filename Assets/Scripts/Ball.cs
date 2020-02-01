@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Ball : MonoBehaviour
 {
@@ -9,6 +10,8 @@ public class Ball : MonoBehaviour
     public float incrSpeed; //amount speed increases with every hit
 
     public int count; //for debugging
+
+    public Text text;
 
     public GameObject northWall;
     public GameObject southWall;
