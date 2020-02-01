@@ -888,7 +888,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: {fileID: 1452322159}
   score: 0
-  shakeMagnitude: 5
+  shakeMagnitude: 0
+  shakeMagnitudeMax: 10
 --- !u!1 &1574763348
 GameObject:
   m_ObjectHideFlags: 0
