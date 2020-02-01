@@ -687,12 +687,12 @@ PrefabInstance:
     - target: {fileID: 8663225196835619911, guid: 0b2c0afbf1bab44c19f057488a92e83f,
         type: 3}
       propertyPath: speed
-      value: 10
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 8663225196835619911, guid: 0b2c0afbf1bab44c19f057488a92e83f,
         type: 3}
       propertyPath: incrSpeed
-      value: 0.1
+      value: 0.01
       objectReference: {fileID: 0}
     - target: {fileID: 8663225196835619911, guid: 0b2c0afbf1bab44c19f057488a92e83f,
         type: 3}

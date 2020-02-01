@@ -22,7 +22,9 @@ public class Ball : MonoBehaviour
         //get rigidbody
         rb = this.GetComponent<Rigidbody2D>();
         //initial velocity
-        rb.velocity = speed * new Vector2(Random.value, Random.value);
+        rb.rotation = Random.Range(0, 360);
+        rb.velocity = new Vector2(speed, speed);
+
     }
 
     // Update is called once per frame
