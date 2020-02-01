@@ -44,8 +44,8 @@ public class Ball : MonoBehaviour
         //increase speed and update velocity accordingly
 
         speed += incrSpeed;
-        rb.velocity += new Vector2(incrSpeed, incrSpeed);
-
+        rb.AddForce(rb.velocity.normalized * incrSpeed, ForceMode2D.Impulse);
+      
         //update score text
         text.setScoreText();
     }
