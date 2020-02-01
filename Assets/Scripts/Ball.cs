@@ -9,9 +9,7 @@ public class Ball : MonoBehaviour
 
     public float incrSpeed; //amount speed increases with every hit
 
-    public int count; //for debugging
-
-    public Text text;
+    public ScoreText text;
 
     private Rigidbody2D rb;
 
@@ -36,8 +34,9 @@ public class Ball : MonoBehaviour
     
         //increase speed and update velocity accordingly
         speed += incrSpeed;
-        count++;
         rb.velocity += new Vector2(incrSpeed, incrSpeed);
         //rb.AddForce(dir * speed);
+        text.setScoreText();
+        //update score text
     }
 }
