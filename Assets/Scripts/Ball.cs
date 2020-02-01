@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class Ball : MonoBehaviour
 {
-    public ScreenShake camera;
 
     public float speed;
 
@@ -33,8 +32,11 @@ public class Ball : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        // shake screen
+        Camera.main.GetComponent<CameraControl>().Shake(0.5f, 3, 5);
 
         //increase speed and update velocity accordingly
+
         speed += incrSpeed;
         rb.velocity += new Vector2(incrSpeed, incrSpeed);
         //rb.AddForce(dir * speed);
