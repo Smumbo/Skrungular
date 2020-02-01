@@ -9,14 +9,12 @@ public class Walls : MonoBehaviour
     public GameObject eastWall;
     public GameObject westWall;
 
-    private GameObject waiting;
-
+    private HashSet<GameObject> activeWalls;
     public int maxActiveWalls;
-    private int activeWalls;
 
     void Start()
     {
-        activeWalls = 0;
+        activeWalls = new HashSet<GameObject>();
     }
 
     void Update()
@@ -29,35 +27,16 @@ public class Walls : MonoBehaviour
 
     void checkWall(GameObject wall, string direction)
     {
-        if (Input.GetKeyDown(direction) && activeWalls < maxActiveWalls)
+        if (Input.GetKey(direction) && activeWalls.Count < maxActiveWalls)
         {
             wall.SetActive(true);
-            activeWalls += 1;
+            activeWalls.Add(wall);
         }
 
-        if (Input.GetKeyUp(direction) && wall.activeSelf)
+        if (Input.GetKeyUp(direction))
         {
-            if (waiting != null)
-            {
-                wall.SetActive(false);
-                waiting.SetActive(true);
-                waiting = null;
-            }
-            else
-            {
-                wall.SetActive(false);
-                activeWalls -= 1;
-            }
-
-        }
-
-        if (Input.GetKey(direction) && !wall.activeSelf && activeWalls == maxActiveWalls)
-        {
-            waiting = wall;
-        }
-        else
-        {
-            waiting = null;
+            wall.SetActive(false);
+            activeWalls.Remove(wall);
         }
     }
 }
