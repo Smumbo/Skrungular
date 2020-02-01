@@ -39,8 +39,9 @@ public class Ball : MonoBehaviour
 
         speed += incrSpeed;
         rb.velocity += new Vector2(incrSpeed, incrSpeed);
-        //rb.AddForce(dir * speed);
-        text.setScoreText();
+
         //update score text
+        text.setScoreText();
     }
 }
+
