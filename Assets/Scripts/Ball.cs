@@ -22,7 +22,7 @@ public class Ball : MonoBehaviour
         //get rigidbody
         rb = this.GetComponent<Rigidbody2D>();
         //initial velocity
-        float angle = Random.Range(30f, 150f) + Random.Range(0, 2) * 180f;
+        float angle = Random.Range(10f, 180f) + Random.Range(0, 2) * 180f;
         float radAngle = angle * Mathf.Deg2Rad;
         Vector2 dir = new Vector2(Mathf.Cos(radAngle), Mathf.Sin(radAngle));
         rb.velocity = dir * speed;
