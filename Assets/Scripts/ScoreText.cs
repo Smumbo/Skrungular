@@ -9,20 +9,23 @@ public class ScoreText : MonoBehaviour
 
     public int score;
 
-    // Start is called before the first frame update
-    void Start()
+    private Vector3 initialPosition;
+    public float shakeMagnitude;
+
+    void OnEnable()
     {
-        
+        initialPosition = this.transform.localPosition;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        transform.localPosition = initialPosition + Random.insideUnitSphere * shakeMagnitude;
+        text.text = score.ToString("#,###");
     }
 
-    public void setScoreText(){
-        score++;
-        text.text = score.ToString("#,###");
+    public void PlusOne()
+    {
+        score += 1;
     }
 }
