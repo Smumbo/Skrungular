@@ -699,6 +699,11 @@ PrefabInstance:
       propertyPath: text
       value: 
       objectReference: {fileID: 1452322161}
+    - target: {fileID: 8663225196835619911, guid: 0b2c0afbf1bab44c19f057488a92e83f,
+        type: 3}
+      propertyPath: hitBlip
+      value: 
+      objectReference: {fileID: 2084931944}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0b2c0afbf1bab44c19f057488a92e83f, type: 3}
 --- !u!1001 &1420259267
@@ -1020,7 +1025,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 6fd53f9677d676e4c8231461d0220261, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0

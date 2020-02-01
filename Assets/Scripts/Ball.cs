@@ -6,6 +6,8 @@ using UnityEngine.UI;
 public class Ball : MonoBehaviour
 {
 
+    public AudioSource hitBlip;
+
     public float speed;
 
     public float incrSpeed; //amount speed increases with every hit
@@ -32,6 +34,10 @@ public class Ball : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        // play sound
+        hitBlip.pitch = (Random.Range(0.5f, 1.5f));
+        hitBlip.Play();
+
         // shake screen
         Camera.main.GetComponent<CameraControl>().Shake(0.5f, 3, 5);
 
