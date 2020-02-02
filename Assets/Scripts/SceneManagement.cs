@@ -8,31 +8,44 @@ public class SceneManagement : MonoBehaviour
 
     public GameObject arrow;
 
+    public Ball ball;
+
+    private bool paused;
+
     // Start is called before the first frame update
     void Start()
     {
-        Time.timeScale = 0;
+        ball.sleeping = true;
+        paused = true;
     }
 
     // Update is called once per frame
     void Update()
     {
+        // activate the game at the beginning
+        if(paused){
+            if (Input.anyKey && !(Input.GetKey(KeyCode.R)))
+            {
+                paused = false;
+                arrow.SetActive(false);
+                ball.sleeping = false;
+                ball.Resume();
+            }
+        }
+        else{
+            //R to restart
+            if (Input.GetKeyDown(KeyCode.R))
+            {
+                SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex);
+            }
+        }
+       
         //Esc to Quit
         if (Input.GetKey(KeyCode.Escape))
         {
             Application.Quit();
         }
-        //R to restart
-        if (Input.GetKey(KeyCode.R))
-        {
-            SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex);
-        }
-        // activate the game at the beginning
-        if (Input.anyKey)
-        {
-            Time.timeScale = 1;
-            arrow.SetActive(false);
-        }
+       
 
     }
 }

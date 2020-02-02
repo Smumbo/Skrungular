@@ -18,19 +18,28 @@ public class Ball : MonoBehaviour
 
     public GameObject arrow;
 
+    public bool sleeping; //allows ball to move once key has been pressed at start
+
+    private Vector2 dir;
+
+    //saved velocities for pausing at start
+    private Vector2 velocity;
+
     // Start is called before the first frame update
     void Start()
     {
         //get rigidbody
         rb = this.GetComponent<Rigidbody2D>();
         //initial velocity
-        //float angle = Random.Range(10, 180) + Random.Range(0, 2) * 180;
         float angle = Random.Range(0, 1) * 6 + Random.Range(1, 2) * Random.Range(25f, 27f) + Random.Range(0, 4) * 90;
         float radAngle = angle * Mathf.Deg2Rad;
         Debug.Log(angle);
-        Vector2 dir = new Vector2(Mathf.Cos(radAngle), Mathf.Sin(radAngle));
-        rb.velocity = dir * speed;
+        //save velocity and direction
+        dir = new Vector2(Mathf.Cos(radAngle), Mathf.Sin(radAngle));
+        velocity = dir * speed;
+        rb.Sleep(); //pause the rigidbody at start
         arrow.transform.Rotate(dir, Space.Self);
+      
     }
 
     // Update is called once per frame
@@ -56,6 +65,15 @@ public class Ball : MonoBehaviour
 
         //update score text
         text.PlusOne();
+    }
+
+    //wakes up the rigid body at start of game
+    public void Resume(){
+        if (!sleeping)
+        {
+            rb.WakeUp();
+            rb.velocity = velocity;
+        }
     }
 }
 
