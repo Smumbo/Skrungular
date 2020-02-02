@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class SceneManagement : MonoBehaviour
 {
@@ -10,11 +11,14 @@ public class SceneManagement : MonoBehaviour
 
     public Ball ball;
 
+    public GameObject pauseText;
+
     private bool paused;
 
     // Start is called before the first frame update
     void Start()
     {
+        pauseText.SetActive(true);
         ball.sleeping = true;
         paused = true;
     }
@@ -23,29 +27,33 @@ public class SceneManagement : MonoBehaviour
     void Update()
     {
         // activate the game at the beginning
-        if(paused){
+        if (paused)
+        {
+
             if (Input.anyKey && !(Input.GetKey(KeyCode.R)))
             {
+                pauseText.SetActive(false);
                 paused = false;
                 arrow.SetActive(false);
                 ball.sleeping = false;
                 ball.Resume();
             }
         }
-        else{
+        else
+        {
             //R to restart
             if (Input.GetKeyDown(KeyCode.R))
             {
                 SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex);
             }
         }
-       
+
         //Esc to Quit
         if (Input.GetKey(KeyCode.Escape))
         {
             Application.Quit();
         }
-       
+
 
     }
 }
