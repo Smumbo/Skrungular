@@ -7,6 +7,8 @@ public class LoseBounds : MonoBehaviour
 
     public GameObject restart;
 
+    public AudioSource loseSound;
+
     public bool slowDown; 
 
     // Start is called before the first frame update
@@ -14,6 +16,7 @@ public class LoseBounds : MonoBehaviour
     {
         restart.SetActive(false);
         slowDown = false;
+        loseSound = this.GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -26,6 +29,6 @@ public class LoseBounds : MonoBehaviour
     {
         restart.SetActive(true);
         slowDown = true;
-
+        loseSound.Play();
     }
 }

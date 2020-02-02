@@ -15,6 +15,10 @@ public class SceneManagement : MonoBehaviour
 
     public LoseBounds lose;
 
+    public AudioSource Music;
+
+    private AudioSource startSound;
+
     private bool paused;
 
     // Start is called before the first frame update
@@ -23,6 +27,8 @@ public class SceneManagement : MonoBehaviour
         pauseText.SetActive(true);
         ball.sleeping = true;
         paused = true;
+        startSound = this.GetComponent<AudioSource>();
+        Music.Pause();
     }
 
     // Update is called once per frame
@@ -34,12 +40,18 @@ public class SceneManagement : MonoBehaviour
 
             if (Input.anyKey && !(Input.GetKey(KeyCode.R)))
             {
+                //reset time scale
                 Time.timeScale = 1;
+                //disable starting text and arrow
                 pauseText.SetActive(false);
                 paused = false;
                 arrow.SetActive(false);
+                //move ball
                 ball.sleeping = false;
                 ball.Resume();
+                //play audio
+                startSound.Play();
+                Music.Play();
             }
         }
         else
@@ -60,6 +72,7 @@ public class SceneManagement : MonoBehaviour
         //slow time scale on lose condition
         if (lose.slowDown)
         {
+            Music.Pause();
             if (Time.timeScale > 0)
             {
 
