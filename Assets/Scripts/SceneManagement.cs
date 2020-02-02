@@ -19,6 +19,8 @@ public class SceneManagement : MonoBehaviour
 
     private AudioSource startSound;
 
+    public ScoreText score;
+
     private bool paused;
 
     // Start is called before the first frame update
@@ -73,6 +75,7 @@ public class SceneManagement : MonoBehaviour
         if (lose.slowDown)
         {
             Music.Pause();
+            score.stopShaking = true;
             if (Time.timeScale > 0)
             {
 

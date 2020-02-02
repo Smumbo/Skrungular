@@ -964,7 +964,7 @@ PrefabInstance:
     - target: {fileID: 8663225196835619911, guid: 0b2c0afbf1bab44c19f057488a92e83f,
         type: 3}
       propertyPath: speed
-      value: 10
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8663225196835619911, guid: 0b2c0afbf1bab44c19f057488a92e83f,
         type: 3}
@@ -1261,6 +1261,7 @@ MonoBehaviour:
   score: 0
   shakeMagnitude: 0
   shakeMagnitudeMax: 10
+  stopShaking: 0
 --- !u!1 &1574763348
 GameObject:
   m_ObjectHideFlags: 0
@@ -1633,6 +1634,7 @@ MonoBehaviour:
   pauseText: {fileID: 2097218305}
   lose: {fileID: 1002929095}
   Music: {fileID: 1576433857}
+  score: {fileID: 1452322161}
 --- !u!4 &2067112631
 Transform:
   m_ObjectHideFlags: 0

@@ -13,21 +13,18 @@ public class ScoreText : MonoBehaviour
     public float shakeMagnitude;
     public float shakeMagnitudeMax;
 
+    public bool stopShaking;
+
     void OnEnable()
     {
         text.text = "0";
         initialPosition = this.transform.localPosition;
+        stopShaking = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        // shake
-        if (shakeMagnitude < shakeMagnitudeMax)
-        {
-            shakeMagnitude = score * 0.1f;
-        }
-        transform.localPosition = initialPosition + Random.insideUnitSphere * shakeMagnitude;
 
         // update score display
         if (score == 0)
@@ -35,6 +32,17 @@ public class ScoreText : MonoBehaviour
             return;
         }
         text.text = score.ToString("#,###");
+
+        if(stopShaking){
+            return;
+        }
+
+        // shake
+        if (shakeMagnitude < shakeMagnitudeMax)
+        {
+            shakeMagnitude = score * 0.1f;
+        }
+        transform.localPosition = initialPosition + Random.insideUnitSphere * shakeMagnitude;
     }
 
     public void PlusOne()
