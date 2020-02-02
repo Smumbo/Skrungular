@@ -33,14 +33,15 @@ public class ScoreText : MonoBehaviour
         }
         text.text = score.ToString("#,###");
 
-        if(stopShaking){
+        if (stopShaking)
+        {
             return;
         }
 
         // shake
         if (shakeMagnitude < shakeMagnitudeMax)
         {
-            shakeMagnitude = score * 0.1f;
+            shakeMagnitude = score * 0.07f;
         }
         transform.localPosition = initialPosition + Random.insideUnitSphere * shakeMagnitude;
     }

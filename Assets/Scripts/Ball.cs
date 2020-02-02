@@ -56,7 +56,7 @@ public class Ball : MonoBehaviour
         hitBlip.Play();
 
         // shake screen
-        Camera.main.GetComponent<CameraControl>().Shake(0.4f, 3, 5);
+        Camera.main.GetComponent<CameraControl>().Shake(0.3f, 3, 5);
 
         //increase speed and update velocity accordingly
 
