@@ -783,6 +783,7 @@ MonoBehaviour:
   southWall: {fileID: 122963312}
   eastWall: {fileID: 1420259268}
   westWall: {fileID: 439134126}
+  lose: {fileID: 1002929095}
   maxActiveWalls: 1
 --- !u!4 &1140244210
 Transform:
@@ -1635,6 +1636,7 @@ MonoBehaviour:
   lose: {fileID: 1002929095}
   Music: {fileID: 1576433857}
   score: {fileID: 1452322161}
+  walls: {fileID: 0}
 --- !u!4 &2067112631
 Transform:
   m_ObjectHideFlags: 0

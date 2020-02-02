@@ -9,6 +9,8 @@ public class Walls : MonoBehaviour
     public GameObject eastWall;
     public GameObject westWall;
 
+    public LoseBounds lose;
+
     private HashSet<GameObject> activeWalls;
     public int maxActiveWalls;
 
@@ -19,10 +21,13 @@ public class Walls : MonoBehaviour
 
     void Update()
     {
-        checkWall(northWall, "up");
-        checkWall(southWall, "down");
-        checkWall(eastWall, "right");
-        checkWall(westWall, "left");
+        if (!lose.slowDown)
+        {
+            checkWall(northWall, "up");
+            checkWall(southWall, "down");
+            checkWall(eastWall, "right");
+            checkWall(westWall, "left");
+        }
     }
 
     void checkWall(GameObject wall, string direction)

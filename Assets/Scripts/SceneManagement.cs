@@ -21,6 +21,8 @@ public class SceneManagement : MonoBehaviour
 
     public ScoreText score;
 
+    public Walls walls;
+
     private bool paused;
 
     // Start is called before the first frame update
