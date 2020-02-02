@@ -8,7 +8,7 @@ public class SceneManagement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        Time.timeScale = 0;
     }
 
     // Update is called once per frame
@@ -24,5 +24,11 @@ public class SceneManagement : MonoBehaviour
         {
             SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex);
         }
+        // activate the game at the beginning
+        if (Input.anyKey)
+        {
+            Time.timeScale = 1;
+        }
+
     }
 }
