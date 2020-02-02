@@ -13,6 +13,8 @@ public class SceneManagement : MonoBehaviour
 
     public GameObject pauseText;
 
+    public LoseBounds lose;
+
     private bool paused;
 
     // Start is called before the first frame update
@@ -32,6 +34,7 @@ public class SceneManagement : MonoBehaviour
 
             if (Input.anyKey && !(Input.GetKey(KeyCode.R)))
             {
+                Time.timeScale = 1;
                 pauseText.SetActive(false);
                 paused = false;
                 arrow.SetActive(false);
@@ -52,6 +55,16 @@ public class SceneManagement : MonoBehaviour
         if (Input.GetKey(KeyCode.Escape))
         {
             Application.Quit();
+        }
+
+        //slow time scale on lose condition
+        if (lose.slowDown)
+        {
+            if (Time.timeScale > 0)
+            {
+
+                Time.timeScale /= 1.2f;
+            }
         }
 
 
