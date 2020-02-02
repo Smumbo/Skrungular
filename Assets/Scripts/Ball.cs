@@ -38,8 +38,8 @@ public class Ball : MonoBehaviour
         dir = new Vector2(Mathf.Cos(radAngle), Mathf.Sin(radAngle));
         velocity = dir * speed;
         rb.Sleep(); //pause the rigidbody at start
-        arrow.transform.Rotate(dir, Space.Self);
-      
+        arrow.transform.Rotate(0f, 0f, angle, Space.Self); // aim arrow
+
     }
 
     // Update is called once per frame
@@ -68,7 +68,8 @@ public class Ball : MonoBehaviour
     }
 
     //wakes up the rigid body at start of game
-    public void Resume(){
+    public void Resume()
+    {
         if (!sleeping)
         {
             rb.WakeUp();
