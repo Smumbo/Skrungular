@@ -16,6 +16,8 @@ public class Ball : MonoBehaviour
 
     private Rigidbody2D rb;
 
+    public GameObject arrow;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,7 +30,7 @@ public class Ball : MonoBehaviour
         Debug.Log(angle);
         Vector2 dir = new Vector2(Mathf.Cos(radAngle), Mathf.Sin(radAngle));
         rb.velocity = dir * speed;
-
+        arrow.transform.Rotate(dir, Space.Self);
     }
 
     // Update is called once per frame
